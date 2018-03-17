@@ -12,20 +12,12 @@ namespace Api.App.Infrastructure.Persistance.FileDB
 
         private ILog _log;
 
-        private string _fileLocation = @".\";
-        private string _fileName;
 
-        public string FilePath
-        {
-            get
-            {
-                return Path.Combine(this._fileLocation, this._fileName);
-            }
-        }
+        public string FilePath;
 
-        public FileDBSession(string fileName)
+        public FileDBSession(string filePath)
         {
-            this._fileName = fileName;
+            this.FilePath = filePath;
 
             if (!File.Exists(this.FilePath))
             {
@@ -34,13 +26,6 @@ namespace Api.App.Infrastructure.Persistance.FileDB
             }
                 
         }
-
-        public FileDBSession(string location, string fileName)
-            : this(fileName)
-        {
-            this._fileLocation = location;
-        }
-
 
         public void Dispose()
         {

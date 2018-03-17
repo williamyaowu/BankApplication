@@ -31,7 +31,7 @@ namespace Api.App.Config.IocInstallers
                 .LifestyleTransient());
 
             container.Register(Component.For<IPersistancSession>()
-                .UsingFactoryMethod(()=> { return new FileDBSession(ConfigurationManager.AppSettings["LocalTextDBFileName"]); })
+                .UsingFactoryMethod(()=> { return new FileDBSession(ConfigurationManager.AppSettings["LocalTextDBFilePath"]); })
                 .LifestyleScoped());
 
             container.Register(Component.For<IConverterManager>()
