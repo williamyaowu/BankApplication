@@ -13,8 +13,8 @@ namespace Api.App.Bank.Controllers
             this._paymentService = paymentService;
         }
 
-        [Route("Api/Payment")]
-        [HttpGet]
+        [Route("Payment")]
+        [HttpPost]
         public IHttpActionResult CreatePayment()
         {
             PaymentModel payment = new PaymentModel
