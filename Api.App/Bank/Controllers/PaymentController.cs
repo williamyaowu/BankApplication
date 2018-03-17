@@ -1,0 +1,30 @@
+﻿using Api.App.Bank.Models;
+using Api.App.Bank.Services.Interface;
+using System.Web.Http;
+
+namespace Api.App.Bank.Controllers
+{
+    public class PaymentController : ApiController
+    {
+        private IPaymentService _paymentService;
+
+        public PaymentController(IPaymentService paymentService)
+        {
+            this._paymentService = paymentService;
+        }
+
+        [Route("Api/Payment")]
+        [HttpGet]
+        public IHttpActionResult CreatePayment()
+        {
+            PaymentModel payment = new PaymentModel
+            {
+                BSB = "123",
+                PaymentAmount = 220
+            };
+            this._paymentService.Save(payment);
+
+            return this.Ok();
+        }
+    }
+}
