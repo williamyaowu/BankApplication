@@ -3,4 +3,6 @@ packages/
 bin/
 obj/
 .vs/
+node_modules/
+dist/
 
