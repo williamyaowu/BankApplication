@@ -15,13 +15,9 @@ namespace Api.App.Bank.Controllers
 
         [Route("Payment")]
         [HttpPost]
-        public IHttpActionResult CreatePayment()
+        public IHttpActionResult CreatePayment(PaymentModel payment)
         {
-            PaymentModel payment = new PaymentModel
-            {
-                BSB = "123",
-                PaymentAmount = 220
-            };
+
             this._paymentService.Save(payment);
 
             return this.Ok();
