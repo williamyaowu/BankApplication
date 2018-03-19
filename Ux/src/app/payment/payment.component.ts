@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
   selector: 'app-payment',
   templateUrl: './payment.component.html',
   styleUrls: ['./payment.component.css'],
-  providers: [PaymentService]
+  providers: []
 })
 export class PaymentComponent implements OnInit {
   public paymentModel: PaymentModel;
